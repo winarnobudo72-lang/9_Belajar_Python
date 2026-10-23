@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modul Interaktif Python Dasar — Informatika Kelas IX</title>
+<style>
+:root{--navy:#10233f;--blue:#2563eb;--cyan:#06b6d4;--ink:#172033;--muted:#64748b;--paper:#f5f8ff;--line:#dce5f2;--green:#15803d;--orange:#c2410c}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+header{background:linear-gradient(125deg,#10233f,#1d4ed8 70%,#06b6d4);color:white;padding:34px 20px 28px}
+.wrap{max-width:1120px;margin:auto;padding:0 18px}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:800;opacity:.85}
+h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.12;margin:.5rem 0}header p{max-width:760px;margin:.6rem 0 1rem;color:#eaf3ff}
+.pills{display:flex;gap:8px;flex-wrap:wrap}.pill{border:1px solid #ffffff65;background:#ffffff18;padding:5px 10px;border-radius:999px;font-size:.88rem}
+nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 3px 12px #0f172a0a}
+nav .wrap{display:flex;gap:7px;overflow:auto;padding-top:10px;padding-bottom:10px}nav a{white-space:nowrap;text-decoration:none;color:#24344d;padding:8px 11px;border-radius:9px;font-weight:700;font-size:.9rem}nav a:hover{background:#eaf1ff;color:var(--blue)}
+main{padding:24px 0 50px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;margin:0 0 18px;box-shadow:0 8px 25px #17345b08}.card h2{margin:.1rem 0 1rem;font-size:1.45rem;color:var(--navy)}.card h3{color:#1d4ed8;margin:1rem 0 .4rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.mini{background:#f6f9ff;border:1px solid var(--line);border-radius:13px;padding:15px}.mini strong{display:block;color:#1d4ed8;font-size:1.03rem}.muted{color:var(--muted)}.callout{border-left:4px solid var(--cyan);background:#effaff;padding:12px 15px;border-radius:8px;margin:12px 0}
+code,pre,textarea.code{font-family:Consolas,Monaco,monospace}code{background:#edf2ff;color:#1e40af;border-radius:5px;padding:2px 5px}pre{white-space:pre-wrap;overflow:auto;background:#0b1220;color:#d9e7ff;padding:16px;border-radius:12px;font-size:.95rem}
+button,.btn{cursor:pointer;border:0;border-radius:10px;background:var(--blue);color:white;padding:10px 15px;font-weight:750;font-size:.95rem}button:hover,.btn:hover{filter:brightness(.94)}button.secondary{background:#e7eefb;color:#1e3a8a}button.green{background:#15803d}button.orange{background:#c2410c}
+label{display:block;font-weight:700;margin:10px 0 5px}input,select,textarea{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:9px;font:inherit;background:white}textarea{min-height:88px;resize:vertical}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row>*{flex:1}.simout{background:#0b1220;color:#d1fae5;border-radius:10px;padding:14px;min-height:54px;margin-top:10px;white-space:pre-wrap;font-family:Consolas,monospace}
+.lesson{border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}.lesson summary{padding:13px 15px;font-weight:800;cursor:pointer;background:#f7faff;color:#183153}.lesson .inside{padding:0 15px 15px}
+.question{border:1px solid var(--line);padding:14px;border-radius:12px;margin:12px 0}.question p{font-weight:750;margin:0 0 8px}.option{display:flex;gap:9px;align-items:flex-start;font-weight:400;margin:7px 0}.option input{width:auto;margin-top:6px}.feedback{font-size:.9rem;margin-top:8px}.score{font-size:1.15rem;font-weight:800;padding:12px;background:#eff6ff;border-radius:10px;margin-top:12px}
+table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid var(--line);padding:9px;text-align:left}th{background:#eff4ff}
+footer{text-align:center;color:var(--muted);padding:25px}
+@media print{nav,.no-print,button{display:none!important}body{background:white;font-size:11pt}.card{box-shadow:none;break-inside:avoid;border:1px solid #bbb;margin-bottom:12px}.lesson{break-inside:avoid}header{background:#fff!important;color:#111;padding:15px}header p{color:#222}.pill{border-color:#777}.simout,pre{color:#111;background:#f3f3f3;border:1px solid #aaa}main{padding-top:10px}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="eyebrow">Modul ajar interaktif • Informatika</div>
+<h1>BELAJAR PYTHON DASAR</h1>
+<p>Belajar pemrograman langkah demi langkah: mengenal sintaks, mencoba perintah, membuat proyek sederhana, mengerjakan LKPD, dan menguji pemahaman.</p>
+<div class="pills"><span class="pill">Fase D · Kelas IX</span><span class="pill">Guru: Budi Winarno, S.Kom</span><span class="pill">SMP Negeri 2 Ngadirejo</span></div>
+</div>
+</header>
+<nav><div class="wrap">
+<a href="#tujuan">Tujuan</a><a href="#materi">Tutorial</a><a href="#simulator">Simulator</a><a href="#projek">Proyek</a><a href="#lkpd">LKPD Praktik</a><a href="#kuis">Kuis 20 Soal</a><a href="#refleksi">Refleksi</a>
+</div></nav>
+<main class="wrap">
+<section class="card" id="tujuan">
+<h2>🎯 Tujuan Pembelajaran</h2>
+<div class="grid">
+<div class="mini"><strong>Memahami</strong>Mengenali Python, program, algoritma, dan aturan penulisan kode dasar.</div>
+<div class="mini"><strong>Menerapkan</strong>Menggunakan <code>print()</code>, variabel, tipe data, input, operator, percabangan, dan perulangan.</div>
+<div class="mini"><strong>Mencipta</strong>Membuat program sederhana, menguji hasil, serta memperbaiki kesalahan kode.</div>
+</div>
+<h3>Alur belajar</h3>
+<p>Amati contoh → pahami kode → ubah nilai → jalankan simulator → selesaikan proyek → isi LKPD → kerjakan kuis.</p>
+<div class="callout"><b>Catatan:</b> Simulator pada halaman ini menjalankan subset Python dasar secara aman di browser. Simulator bukan interpreter Python penuh. Untuk program Python asli, gunakan Python 3 atau editor daring tepercaya dengan pendampingan guru.</div>
+</section>
+
+<section class="card" id="materi">
+<h2>📘 Tutorial Belajar Python</h2>
+<details class="lesson" open><summary>1. Apa itu Python?</summary><div class="inside">
+<p>Python adalah bahasa pemrograman yang sintaksnya relatif mudah dibaca. Program adalah kumpulan instruksi yang dijalankan komputer untuk menyelesaikan tugas.</p>
+<pre># Program pertamaku
+print("Halo, dunia!")
+print("Saya sedang belajar Python")</pre>
+<p><b>Ingat:</b> teks ditulis di antara tanda kutip. Tanda <code>#</code> memulai komentar yang tidak dijalankan sebagai perintah.</p>
+</div></details>
+<details class="lesson"><summary>2. Menampilkan teks dan angka — print()</summary><div class="inside">
+<pre>print("Selamat pagi")
+print(9 + 6)
+print("Hasil:", 9 + 6)</pre>
+<p><code>print()</code> menampilkan informasi. Angka dapat dihitung langsung; teks harus diberi tanda kutip.</p>
+</div></details>
+<details class="lesson"><summary>3. Variabel dan tipe data</summary><div class="inside">
+<pre>nama = "Ayu"
+kelas = 9
+nilai = 87.5
+hadir = True
+print(nama)
+print(kelas)
+print(nilai)
+print(hadir)</pre>
+<table><tr><th>Tipe</th><th>Contoh</th><th>Keterangan</th></tr><tr><td><code>str</code></td><td><code>"Ayu"</code></td><td>Teks</td></tr><tr><td><code>int</code></td><td><code>9</code></td><td>Bilangan bulat</td></tr><tr><td><code>float</code></td><td><code>87.5</code></td><td>Bilangan desimal</td></tr><tr><td><code>bool</code></td><td><code>True</code></td><td>Benar atau salah</td></tr></table>
+<p>Nama variabel tidak boleh diawali angka dan peka huruf besar-kecil. Gunakan nama yang bermakna, misalnya <code>jumlah_siswa</code>.</p>
+</div></details>
+<details class="lesson"><summary>4. Input dari pengguna</summary><div class="inside">
+<pre>nama = input("Siapa namamu? ")
+print("Halo,", nama)</pre>
+<p><code>input()</code> menerima masukan pengguna sebagai teks. Untuk operasi matematika, ubah teks angka dengan <code>int()</code> atau <code>float()</code>.</p>
+<pre>umur = int(input("Umur: "))
+print("Tahun depan umurmu", umur + 1)</pre>
+</div></details>
+<details class="lesson"><summary>5. Operator dasar</summary><div class="inside">
+<table><tr><th>Operator</th><th>Makna</th><th>Contoh</th></tr><tr><td><code>+</code></td><td>Penjumlahan</td><td><code>8 + 3</code> menghasilkan 11</td></tr><tr><td><code>-</code></td><td>Pengurangan</td><td><code>8 - 3</code> menghasilkan 5</td></tr><tr><td><code>*</code></td><td>Perkalian</td><td><code>8 * 3</code> menghasilkan 24</td></tr><tr><td><code>/</code></td><td>Pembagian</td><td><code>8 / 2</code> menghasilkan 4.0</td></tr><tr><td><code>//</code></td><td>Pembagian bulat</td><td><code>9 // 2</code> menghasilkan 4</td></tr><tr><td><code>%</code></td><td>Sisa bagi</td><td><code>9 % 2</code> menghasilkan 1</td></tr><tr><td><code>**</code></td><td>Pangkat</td><td><code>2 ** 3</code> menghasilkan 8</td></tr></table>
+</div></details>
+<details class="lesson"><summary>6. Percabangan if–elif–else</summary><div class="inside">
+<pre>nilai = 82
+if nilai >= 85:
+    print("Sangat baik")
+elif nilai >= 75:
+    print("Baik")
+else:
+    print("Perlu latihan")</pre>
+<p>Kondisi menghasilkan <code>True</code> atau <code>False</code>. Tanda titik dua (<code>:</code>) dan indentasi menunjukkan blok perintah.</p>
+</div></details>
+<details class="lesson"><summary>7. Perulangan for dan while</summary><div class="inside">
+<pre>for nomor in range(1, 6):
+    print(nomor)
+
+hitung = 1
+while hitung <= 3:
+    print("Latihan", hitung)
+    hitung = hitung + 1</pre>
+<p><code>range(1, 6)</code> menghasilkan 1 sampai 5. Pada <code>while</code>, pastikan kondisi akhirnya menjadi salah agar perulangan berhenti.</p>
+</div></details>
+<details class="lesson"><summary>8. List dan fungsi sederhana</summary><div class="inside">
+<pre>buah = ["apel", "jeruk", "mangga"]
+print(buah[0])
+
+def sapa(nama):
+    print("Halo,", nama)
+
+sapa("Dina")</pre>
+<p>Indeks list dimulai dari 0. Fungsi dibuat dengan kata kunci <code>def</code> untuk mengelompokkan perintah agar dapat digunakan kembali.</p>
+</div></details>
+</section>
+
+<section class="card" id="simulator">
+<h2>🧪 Simulator Perintah Python</h2>
+<p class="muted">Pilih contoh, ubah kode atau nilai, lalu klik Jalankan. Simulator mendukung contoh dasar: <code>print</code>, variabel, operasi matematika, <code>if/elif/else</code> sederhana, dan <code>for</code> dengan <code>range</code>.</p>
+<div class="row no-print"><div><label for="contoh">Pilih contoh</label><select id="contoh"><option value="halo">Halo Dunia</option><option value="hitung">Kalkulator sederhana</option><option value="nilai">Pemeriksa nilai</option><option value="ulang">Perulangan angka</option><option value="biodata">Biodata sederhana</option></select></div><div style="align-self:end"><button id="muat" class="secondary">Muat contoh</button></div></div>
+<label for="kode">Kode Python</label><textarea id="kode" spellcheck="false" style="min-height:190px;font-family:Consolas,monospace">nama = "Siswa"
+print("Halo,", nama)
+print("Selamat belajar Python!")</textarea>
+<div class="row no-print" style="margin-top:10px"><button id="jalankan">▶ Jalankan kode</button><button id="bersihkan" class="secondary">Bersihkan keluaran</button></div>
+<div id="keluaran" class="simout" aria-live="polite">Keluaran program akan tampil di sini.</div>
+<p class="muted">Jika kode belum didukung simulator, baca kembali contoh dan sintaks di tutorial. Simulator tidak menjalankan kode arbitrer, akses berkas, atau koneksi internet.</p>
+</section>
+
+<section class="card" id="projek">
+<h2>🚀 Proyek Mini</h2>
+<div class="grid">
+<div class="mini"><strong>Proyek 1 — Kartu Perkenalan</strong><p>Target: gunakan variabel dan <code>print()</code>.</p><pre>nama = "Raka"
+kelas = "IX"
+hobi = "robotika"
+print("Nama:", nama)
+print("Kelas:", kelas)
+print("Hobi:", hobi)</pre><button class="secondary salin" data-code='nama = "Raka"\nkelas = "IX"\nhobi = "robotika"\nprint("Nama:", nama)\nprint("Kelas:", kelas)\nprint("Hobi:", hobi)'>Pakai kode ini</button></div>
+<div class="mini"><strong>Proyek 2 — Kalkulator Belanja</strong><p>Target: variabel dan operator.</p><pre>harga = 5000
+jumlah = 3
+total = harga * jumlah
+print("Total belanja:", total)</pre><button class="secondary salin" data-code='harga = 5000\njumlah = 3\ntotal = harga * jumlah\nprint("Total belanja:", total)'>Pakai kode ini</button></div>
+<div class="mini"><strong>Proyek 3 — Kategori Nilai</strong><p>Target: percabangan.</p><pre>nilai = 78
+if nilai >= 75:
+    print("Tuntas")
+else:
+    print("Perlu bimbingan")</pre><button class="secondary salin" data-code='nilai = 78\nif nilai >= 75:\n    print("Tuntas")\nelse:\n    print("Perlu bimbingan")'>Pakai kode ini</button></div>
+</div>
+<h3>Tantangan pengembangan</h3>
+<ul><li>Ubah data contoh menjadi data buatan sendiri.</li><li>Tambahkan minimal dua keluaran yang informatif.</li><li>Uji program dengan nilai berbeda.</li><li>Catat satu kesalahan yang ditemukan dan cara memperbaikinya.</li></ul>
+</section>
+
+<section class="card" id="lkpd">
+<h2>📝 LKPD Praktik Python Dasar</h2>
+<p>Lengkapi identitas, tulis jawaban dan kode praktik. Tombol simpan menyimpan pekerjaan pada perangkat/browser yang sedang digunakan; cetak atau unduh salinan untuk cadangan.</p>
+<div class="grid">
+<div><label for="nama">Nama siswa</label><input id="nama" placeholder="Nama lengkap"></div>
+<div><label for="kelas">Kelas</label><select id="kelas"><option value="">Pilih kelas</option><option>IX A</option><option>IX B</option><option>IX C</option><option>IX D</option><option>IX E</option><option>IX F</option><option>IX G</option></select></div>
+<div><label for="tanggal">Tanggal praktik</label><input id="tanggal" type="date"></div>
+</div>
+<h3>Kegiatan 1 — Output</h3><p>Buat program yang menampilkan nama, kelas, dan kalimat “Saya siap belajar Python”.</p><label for="lk1">Kode dan hasil pengamatan</label><textarea id="lk1" placeholder="Tulis kode serta keluaran yang diharapkan..."></textarea>
+<h3>Kegiatan 2 — Variabel dan operasi</h3><p>Harga satu buku Rp4.000. Hitung harga 5 buku menggunakan variabel.</p><label for="lk2">Kode program dan hasil</label><textarea id="lk2" placeholder="Tulis kode Python..."></textarea>
+<h3>Kegiatan 3 — Percabangan</h3><p>Buat program: jika skor minimal 75 tampilkan “Tuntas”; selain itu tampilkan “Latihan lagi”. Uji skor 60 dan 85.</p><label for="lk3">Kode, dua hasil uji, dan kesimpulan</label><textarea id="lk3" placeholder="Tuliskan jawaban..."></textarea>
+<h3>Kegiatan 4 — Refleksi debugging</h3><p>Temukan atau buat satu kesalahan sintaks sederhana, kemudian tulis cara memperbaikinya.</p><label for="lk4">Kesalahan dan perbaikan</label><textarea id="lk4" placeholder="Contoh: ..."></textarea>
+<div class="row no-print" style="margin-top:14px"><button id="simpan" class="green">Simpan LKPD di browser</button><button id="unduh" class="secondary">Unduh LKPD (.txt)</button><button onclick="window.print()" class="secondary">Cetak / Simpan PDF</button></div><p id="statusSimpan" class="muted" aria-live="polite"></p>
+</section>
+
+<section class="card" id="kuis">
+<h2>🧠 Kuis Python Dasar — 20 Soal</h2>
+<p>Pilih satu jawaban pada setiap soal, lalu klik Periksa Jawaban. Nilai dihitung dari jawaban benar; pembahasan muncul setelah diperiksa.</p>
+<div id="daftarKuis"></div>
+<div class="row no-print"><button id="periksa">Periksa jawaban</button><button id="ulangKuis" class="secondary">Ulangi kuis</button></div>
+<div id="hasilKuis" class="score" aria-live="polite">Nilai belum dihitung.</div>
+</section>
+<section class="card" id="refleksi">
+<h2>🌱 Refleksi dan tindak lanjut</h2>
+<ul><li>Perintah Python apa yang paling mudah kamu pahami?</li><li>Bagian mana yang masih membingungkan?</li><li>Program apa yang ingin kamu buat untuk membantu kegiatan sekolah?</li></ul>
+<label for="refleksiSiswa">Refleksi saya</label><textarea id="refleksiSiswa" placeholder="Tuliskan refleksi singkat..."></textarea>
+<div class="row no-print" style="margin-top:10px"><button onclick="window.print()" class="secondary">Cetak modul / Simpan PDF</button><button id="unduhSemua" class="secondary">Unduh jawaban LKPD + refleksi</button></div>
+</section>
+</main>
+<footer>SMP Negeri 2 Ngadirejo · Informatika Fase D Kelas IX · Budi Winarno, S.Kom</footer>
+<script>
+const examples={
+halo:'print("Halo, dunia!")\nprint("Saya sedang belajar Python")',
+hitung:'harga = 4000\njumlah = 5\ntotal = harga * jumlah\nprint("Total:", total)',
+nilai:'nilai = 82\nif nilai >= 75:\n    print("Tuntas")\nelse:\n    print("Latihan lagi")',
+ulang:'for nomor in range(1, 6):\n    print(nomor)',
+biodata:'nama = "Siswa"\nkelas = "IX"\nhobi = "membaca"\nprint("Nama:", nama)\nprint("Kelas:", kelas)\nprint("Hobi:", hobi)'
+};
+const $=id=>document.getElementById(id);
+$('muat').onclick=()=>{$('kode').value=examples[$('contoh').value];$('keluaran').textContent='Contoh dimuat. Klik Jalankan kode.'};
+function evaluateSimple(src){
+ let vars={},out=[],lines=src.replace(/\r/g,'').split('\n'),skip=false,conditionStack=[];
+ const val=(s)=>{s=s.trim();if((s.startsWith('"')&&s.endsWith('"'))||(s.startsWith("'")&&s.endsWith("'")))return s.slice(1,-1);if(s==='True')return true;if(s==='False')return false;if(s in vars)return vars[s];if(/^-?\d+(\.\d+)?$/.test(s))return Number(s);
+ let m=s.match(/^(.+?)\s*(\*\*|\/\/|[%*/+-])\s*(.+)$/);if(m){let a=val(m[1]),b=val(m[3]);if(typeof a!=='number'||typeof b!=='number')throw Error('Operator matematika memerlukan angka.');switch(m[2]){case'+':return a+b;case'-':return a-b;case'*':return a*b;case'/':return a/b;case'//':return Math.floor(a/b);case'%':return a%b;case'**':return a**b}}
+ if(s.includes(',')){return s.split(',').map(x=>val(x)).map(String).join(' ')}
+ throw Error('Ekspresi belum didukung: '+s);
+ };
+ function truth(cond){let m=cond.match(/^(.+?)\s*(>=|<=|==|!=|>|<)\s*(.+)$/);if(!m)throw Error('Kondisi belum didukung: '+cond);let a=val(m[1]),b=val(m[3]);switch(m[2]){case'>=':return a>=b;case'<=':return a<=b;case'>':return a>b;case'<':return a<b;case'==':return a===b;case'!=':return a!==b}}
+ for(let i=0;i<lines.length;i++){
+  let raw=lines[i];if(!raw.trim()||raw.trim().startsWith('#'))continue;
+  let indent=raw.match(/^\s*/)[0].length, s=raw.trim();
+  if(indent===0){skip=false;conditionStack=[]}
+  if(s.startsWith('if ')&&s.endsWith(':')){let ok=truth(s.slice(3,-1));conditionStack.push({indent,active:ok,done:ok});skip=!ok;continue}
+  if(s.startsWith('elif ')&&s.endsWith(':')){let c=conditionStack[conditionStack.length-1];if(!c)throw Error('elif tanpa if.');let ok=!c.done&&truth(s.slice(5,-1));c.active=ok;c.done=c.done||ok;skip=!ok;continue}
+  if(s==='else:'){let c=conditionStack[conditionStack.length-1];if(!c)throw Error('else tanpa if.');c.active=!c.done;c.done=true;skip=!c.active;continue}
+  if(skip)continue;
+  let fm=s.match(/^for\s+(\w+)\s+in\s+range\((\d+)\s*,\s*(\d+)\):$/);
+  if(fm){let start=+fm[2],end=+fm[3],body=[];while(i+1<lines.length&&/^\s+/.test(lines[i+1]))body.push(lines[++i].trim());for(let n=start;n<end&&n-start<100;n++){vars[fm[1]]=n;for(let b of body){let pm=b.match(/^print\((.*)\)$/);if(pm)out.push(String(val(pm[1])));else {let am=b.match(/^(\w+)\s*=\s*(.+)$/);if(am)vars[am[1]]=val(am[2]);else throw Error('Perintah dalam perulangan belum didukung: '+b)}}}continue}
+  let pm=s.match(/^print\((.*)\)$/);if(pm){out.push(String(val(pm[1])));continue}
+  let am=s.match(/^(\w+)\s*=\s*(.+)$/);if(am){vars[am[1]]=val(am[2]);continue}
+  throw Error('Baris '+(i+1)+' belum didukung simulator: '+s);
+ }
+ return out.join('\n')||'(Program selesai tanpa keluaran.)';
+}
+$('jalankan').onclick=()=>{try{$('keluaran').textContent=evaluateSimple($('kode').value)}catch(e){$('keluaran').textContent='Periksa kode: '+e.message}};
+$('bersihkan').onclick=()=>$('keluaran').textContent='';
+document.querySelectorAll('.salin').forEach(b=>b.onclick=()=>{$('kode').value=b.dataset.code;$('keluaran').textContent='Kode proyek dimuat. Klik Jalankan kode.';document.querySelector('#simulator').scrollIntoView({behavior:'smooth'})});
+
+const questions=[
+['Perintah untuk menampilkan teks di layar adalah…',['input()','print()','show()','writeLine()'],1,'print() menampilkan keluaran ke layar.'],
+['Manakah penulisan teks Python yang benar?',['print(Halo)','print("Halo")','print=Halo','"Halo" print'],1,'Teks literal perlu diapit tanda kutip di dalam print().'],
+['Apa hasil dari print(7 + 3)?',['73','4','10','21'],2,'Operator + menjumlahkan dua angka.'],
+['Pada kode umur = 14, umur disebut…',['fungsi','variabel','komentar','operator'],1,'Variabel menyimpan nilai yang dapat digunakan program.'],
+['Tipe data untuk bilangan bulat adalah…',['str','bool','int','float'],2,'int digunakan untuk bilangan bulat.'],
+['Nilai boolean yang berarti benar ditulis…',['TRUE','"True"','true','True'],3,'Python menggunakan True dengan huruf T kapital.'],
+['Tanda komentar satu baris Python adalah…',['//','#','<!--','**'],1,'Tanda # membuat sisa baris menjadi komentar.'],
+['Apa hasil 9 % 2?',['4','1','4.5','18'],1,'% menghasilkan sisa pembagian; sisa 9 dibagi 2 adalah 1.'],
+['Operator pangkat di Python adalah…',['^','**','//','%%'],1,'Operator ** menghitung perpangkatan.'],
+['Fungsi input() secara bawaan menghasilkan data bertipe…',['int','float','str','bool'],2,'Masukan input() berupa teks dan perlu dikonversi jika ingin dihitung.'],
+['Konversi teks angka menjadi bilangan bulat dilakukan dengan…',['str()','int()','print()','bool()'],1,'int("12") menghasilkan bilangan bulat 12.'],
+['Apa arti operator >= ?',['lebih kecil','sama dengan saja','lebih besar atau sama dengan','tidak sama dengan'],2,'>= memeriksa apakah nilai kiri lebih besar atau sama dengan nilai kanan.'],
+['Blok if digunakan untuk…',['mengulang selamanya','memilih aksi berdasarkan kondisi','menyimpan gambar','menghapus variabel'],1,'if menjalankan blok ketika kondisi bernilai benar.'],
+['Apa hasil logika dari 5 > 8?',['True','False','5','8'],1,'Lima tidak lebih besar dari delapan, jadi hasilnya False.'],
+['range(1, 4) menghasilkan urutan…',['1, 2, 3','1, 2, 3, 4','0, 1, 2, 3, 4','2, 3, 4'],0,'Batas akhir range tidak ikut disertakan.'],
+['Perulangan yang umum digunakan saat jumlah pengulangan diketahui adalah…',['for','if','def','input'],0,'for cocok untuk menelusuri urutan atau rentang.'],
+['Indeks elemen pertama list Python adalah…',['1','-1','0','2'],2,'Indeks list dimulai dari 0.'],
+['Kata kunci untuk mendefinisikan fungsi adalah…',['function','make','def','func'],2,'Definisi fungsi Python dimulai dengan def.'],
+['Mengapa indentasi penting pada if dan for?',['Mempercantik saja','Menentukan blok kode','Mengubah teks jadi angka','Menutup program'],1,'Indentasi menandai perintah yang termasuk ke dalam blok.'],
+['Jika skor = 60 dan syarat if skor >= 75, cabang else berjalan bila tersedia karena…',['60 lebih besar dari 75','kondisi bernilai False','skor otomatis menjadi 75','else selalu berjalan lebih dulu'],1,'60 >= 75 bernilai False sehingga cabang else dijalankan.']
+];
+function renderQuiz(){let host=$('daftarKuis');host.innerHTML='';questions.forEach((q,i)=>{let box=document.createElement('div');box.className='question';box.innerHTML='<p>'+(i+1)+'. '+q[0]+'</p>'+q[1].map((op,j)=>'<label class="option"><input type="radio" name="q'+i+'" value="'+j+'"><span>'+String.fromCharCode(65+j)+'. '+op+'</span></label>').join('')+'<div class="feedback" id="fb'+i+'"></div>';host.appendChild(box)})}
+renderQuiz();
+$('periksa').onclick=()=>{let correct=0;questions.forEach((q,i)=>{let picked=document.querySelector('input[name="q'+i+'"]:checked');let fb=$('fb'+i);if(picked&&Number(picked.value)===q[2])correct++;fb.textContent='Pembahasan: '+q[3];fb.style.color=picked&&Number(picked.value)===q[2]?'#15803d':'#b45309'});let score=Math.round(correct/questions.length*100);$('hasilKuis').textContent='Nilai: '+score+' / 100 ('+correct+' dari 20 benar). '+(score>=75?'Bagus! Lanjutkan dengan proyek mini.':'Pelajari kembali materi, lalu coba lagi.');};
+$('ulangKuis').onclick=()=>{renderQuiz();$('hasilKuis').textContent='Kuis diulang. Pilih jawabanmu.'};
+function lkpdText(){return 'LKPD PRAKTIK PYTHON DASAR\nSMP Negeri 2 Ngadirejo — Informatika Kelas IX\nGuru: Budi Winarno, S.Kom\nNama: '+$('nama').value+'\nKelas: '+$('kelas').value+'\nTanggal: '+$('tanggal').value+'\n\nKegiatan 1 — Output\n'+$('lk1').value+'\n\nKegiatan 2 — Variabel dan operasi\n'+$('lk2').value+'\n\nKegiatan 3 — Percabangan\n'+$('lk3').value+'\n\nKegiatan 4 — Debugging\n'+$('lk4').value+'\n\nRefleksi\n'+$('refleksiSiswa').value}
+$('simpan').onclick=()=>{try{localStorage.setItem('lkpdPythonIX',lkpdText());$('statusSimpan').textContent='LKPD tersimpan pada browser/perangkat ini.'}catch(e){$('statusSimpan').textContent='Penyimpanan browser tidak tersedia. Gunakan Unduh LKPD atau Cetak PDF.'}};
+$('unduh').onclick=()=>downloadText('LKPD_Python_Dasar_Kelas_IX.txt',lkpdText());
+$('unduhSemua').onclick=()=>downloadText('LKPD_dan_Refleksi_Python_IX.txt',lkpdText());
+function downloadText(filename,text){let blob=new Blob([text],{type:'text/plain;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;a.click();URL.revokeObjectURL(a.href)}
+try{$('tanggal').value=new Date().toISOString().slice(0,10);let saved=localStorage.getItem('lkpdPythonIX');if(saved){$('statusSimpan').textContent='Ada LKPD tersimpan sebelumnya. Data tidak dimuat otomatis; unduh/cetak hasil terbaru setelah diisi.'}}catch(e){}
+</script>
+</body>
+</html>
